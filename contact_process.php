@@ -8,7 +8,7 @@ $nama = trim($_POST['nama'] ?? '');
 $email = trim($_POST['email'] ?? ''); 
 $pesan = trim($_POST['pesan'] ?? ''); 
 if ($nama === '' || $pesan === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) { 
-    exit('Data tidak valid. Silakan kembali dan periksa input.'); 
+    exit('Data tidak valid. Silakan kembali dan periksa masukan.'); 
 } 
 $stmt = $conn->prepare("INSERT INTO pesan (nama, email, pesan) VALUES (?, ?, ?)"); 
 $stmt->bind_param('sss', $nama, $email, $pesan); 
